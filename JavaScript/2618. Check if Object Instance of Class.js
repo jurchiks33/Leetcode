@@ -41,3 +41,23 @@
 // However, it is still considered an instance of Number
 // because it accesses the Number methods. For example "toFixed()".
 
+/**
+ * Check if the provided value is an instance of the given class or superclass.
+ * 
+ * @param {*} value - The value to check.
+ * @param {*} classFunction - The class (constructor function) to check against.
+ * @return {boolean} - Returns true if value is an instance of classFunction or its superclass.
+ */
+var checkIfInstanceOf = function(value, classFunction) {
+    // Check for null or undefined
+    if (value == null) {
+        return false;
+    }
+
+    // Special handling for Object class
+    if (classFunction === Object) {
+        // All non-null/undefined primitive types and objects are considered instances of Object
+        return true;
+    }
+
+    
