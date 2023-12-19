@@ -59,3 +59,18 @@ public:
                     for (int y = -1; y <= 1; ++y) {
                         int newX = i + x;
                         int newY = j + y;
+
+                        if (newX >= 0 && newX < m && newY >= 0 && newY < n) {
+                            sum += img[newX][newY];
+                            count++;
+                        }
+                    }
+                }
+
+                result[i][j] = sum / count;
+            }
+        }
+
+        return result;
+    }
+};
