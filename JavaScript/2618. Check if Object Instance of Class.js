@@ -60,4 +60,23 @@ var checkIfInstanceOf = function(value, classFunction) {
         return true;
     }
 
-    
+    // Check if classFunction is a function
+    if (typeof classFunction !== 'function') {
+        return false;
+    }
+
+    // Use instanceof for objects, and compare constructors for primitives
+    if (typeof value === 'object' || typeof value === 'function') {
+        return value instanceof classFunction;
+    } else {
+        return value.constructor === classFunction;
+    }
+};
+
+// Test cases
+console.log(checkIfInstanceOf(new Date(), Date)); // true
+console.log(checkIfInstanceOf(5, Number)); // true
+console.log(checkIfInstanceOf(5n, Object)); // true
+console.log(checkIfInstanceOf(undefined, Object)); // false
+
+//Accepted
