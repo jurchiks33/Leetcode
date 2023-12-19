@@ -37,3 +37,5 @@ console.log(arr1.last()); // Output: 3
 
 const arr2 = [];
 console.log(arr2.last()); // Output: -1
+
+//SOLVED
