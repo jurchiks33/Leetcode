@@ -40,3 +40,12 @@
 //     1 <= m, n <= 200
 //     0 <= img[i][j] <= 255
 
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<vector<int>> imageSmoother(vector<vector<int>>& img) {
+        int m = img.size();
+        int n = img[0].size();
+        vector<vector<int>> result(m, vector<int>(n, 0));
