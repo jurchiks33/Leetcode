@@ -33,3 +33,6 @@
 //     1 <= prices[i] <= 100
 //     1 <= money <= 100
 
+#include <vector>
+#include <climits>
+using namespace std;
