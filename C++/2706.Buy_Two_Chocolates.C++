@@ -40,23 +40,36 @@ using namespace std;
 class Solution {
 public:
     int buyChoco(vector<int>& prices, int money) {
+        // Assume minimum cost to be Infinity
         int minCost = INT_MAX;
 
+        // Number of chocolates
         int n = prices.size();
 
+        // Check every pair of chocolates
         for (int firstChoco = 0; firstChoco < n; firstChoco++) {
             for (int secondChoco = firstChoco + 1; secondChoco < n; secondChoco++) {
+                // Sum of prices of the two chocolates
                 int cost = prices[firstChoco] + prices[secondChoco];
 
+                // If the sum of prices is less than or equal to money and 
+                //less than the minimum cost found so far
                 if (cost <= money && cost < minCost) {
+                    // Update the minimum cost
                     minCost = cost;
                 }
             }
         }
+
+        // We can buy chocolates only if we have enough money and found a valid pair
         if (minCost <= money) {
+            // Return the amount of money left
             return money - minCost;
         } else {
+            // We cannot buy chocolates, return the initial amount of money
             return money;
         }
     }
 };
+
+//Accepted
