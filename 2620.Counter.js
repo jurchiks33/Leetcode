@@ -43,3 +43,8 @@ var createCounter = function(n) {
         return current;
     };
 };
+
+const counter = createCounter(10);
+console.log(counter());
+console.log(counter());
+console.log(counter());
