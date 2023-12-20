@@ -53,3 +53,10 @@ public:
                 }
             }
         }
+        if (minCost <= money) {
+            return money - minCost;
+        } else {
+            return money;
+        }
+    }
+};
