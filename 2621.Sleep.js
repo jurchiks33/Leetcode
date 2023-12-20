@@ -35,3 +35,11 @@ async function sleep(millis) {
         setTimeout(() => {
             resolve(millis);
         }, millis);
+    });
+}
+
+ 
+ let t = Date.now()
+ sleep(100).then(() => console.log(Date.now() - t));
+
+ //Accepted
