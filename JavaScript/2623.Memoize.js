@@ -73,3 +73,20 @@
 //     actions[i] is one of "call" and "getCallCount"
 //     fnName is one of "sum", "factorial" and "fib"
 
+function memoize(fn) {
+    const cache = new Map();
+    let callCount = 0;
+
+    const memoizedFn = function(...args) {
+        const key = JSON.stringify(args); // Create a unique key based on arguments
+
+        if (cache.has(key)) {
+            return cache.get(key); // Return cached value if available
+        }
+
+        callCount++; // Increment call count
+        const result = fn(...args);
+        cache.set(key, result); // Cache the result
+
+        return result;
+    };
