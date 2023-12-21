@@ -33,3 +33,28 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+class Solution {
+public:
+    int maxWidthOfVerticalArea(vector<vector<int>>& points) {
+        vector<int> xCoords;
+
+        // Extract the x-coordinates
+        for (const auto& point : points) {
+            xCoords.push_back(point[0]);
+        }
+
+        // Sort the x-coordinates
+        sort(xCoords.begin(), xCoords.end());
+
+        // Find the maximum difference between consecutive x-coordinates
+        int maxWidth = 0;
+        for (int i = 1; i < xCoords.size(); ++i) {
+            maxWidth = max(maxWidth, xCoords[i] - xCoords[i - 1]);
+        }
+
+        return maxWidth;
+    }
+};
+
+//Accepted
