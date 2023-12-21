@@ -29,3 +29,7 @@
 //     points[i].length == 2
 //     0 <= xi, yi <= 109
 
+
+#include <vector>
+#include <algorithm>
+using namespace std;
