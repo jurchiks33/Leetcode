@@ -90,3 +90,24 @@ function memoize(fn) {
 
         return result;
     };
+
+    memoizedFn.getCallCount = function() {
+        return callCount; // Expose call count
+    };
+
+    return memoizedFn;
+}
+
+// Example Usage
+let callCount = 0;
+const sum = (a, b) => a + b;
+const memoizedSum = memoize(function (a, b) {
+    callCount += 1;
+    return sum(a, b);
+});
+
+console.log(memoizedSum(2, 3)); // 5
+console.log(memoizedSum(2, 3)); // 5
+console.log(memoizedSum.getCallCount()); // 1 (since the second call was cached)
+
+//Accepted.
