@@ -66,3 +66,14 @@
 //     First action is always "TimeLimitedCache" and must be executed immediately,
 //     with a 0-millisecond delay
 
+var TimeLimitedCache = function() {
+    this.store = {};
+    this.expiryTimes = {};
+};
+
+/** 
+ * @param {number} key
+ * @param {number} value
+ * @param {number} duration time until expiration in ms
+ * @return {boolean} if un-expired key already existed
+ */
