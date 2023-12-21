@@ -77,3 +77,23 @@ var TimeLimitedCache = function() {
  * @param {number} duration time until expiration in ms
  * @return {boolean} if un-expired key already existed
  */
+
+TimeLimitedCache.prototype.set = function(key, value, duration) {
+    const now = Date.now();
+    const isExisting = this.store.hasOwnProperty(key) && now < this.expiryTimes[key];
+    this.store[key] = value;
+    this.expiryTimes[key] = now + duration;
+    return isExisting;
+};
+
+/** 
+ * @param {number} key
+ * @return {number} value associated with key
+ */
+TimeLimitedCache.prototype.get = function(key) {
+    const now = Date.now();
+    if (this.store.hasOwnProperty(key) && now < this.expiryTimes[key]) {
+        return this.store[key];
+    }
+    return -1;
+};
