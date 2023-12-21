@@ -97,3 +97,18 @@ TimeLimitedCache.prototype.get = function(key) {
     }
     return -1;
 };
+
+/** 
+ * @return {number} count of non-expired keys
+ */
+TimeLimitedCache.prototype.count = function() {
+    const now = Date.now();
+    return Object.keys(this.store).reduce((count, key) => {
+        if (now < this.expiryTimes[key]) {
+            count++;
+        }
+        return count;
+    }, 0);
+};
+
+//Accepted
