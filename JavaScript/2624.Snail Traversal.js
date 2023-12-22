@@ -56,3 +56,9 @@
 //     1 <= nums[i] <= 1000
 //     1 <= rowsCount <= 250
 //     1 <= colsCount <= 250
+
+Array.prototype.snail = function(rowsCount, colsCount) {
+    // Check for invalid input
+    if (this.length !== rowsCount * colsCount) {
+        return [];
+    }
