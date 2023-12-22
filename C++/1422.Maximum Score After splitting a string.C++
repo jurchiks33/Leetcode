@@ -36,3 +36,15 @@
 //     2 <= s.length <= 500
 //     The string s consists of characters '0' and '1' only.
 
+
+class Solution {
+public:
+    int maxScore(string s) {
+        int countZeros = 0, countOnes = 0, maxScore = 0;
+
+        // Count the total number of ones in the string
+        for (char c : s) {
+            if (c == '1') {
+                countOnes++;
+            }
+        }
