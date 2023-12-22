@@ -48,3 +48,19 @@ public:
                 countOnes++;
             }
         }
+
+        // Iterate through the string, except the last character
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s[i] == '0') {
+                countZeros++;
+            } else {
+                countOnes--;
+            }
+            maxScore = max(maxScore, countZeros + countOnes);
+        }
+
+        return maxScore;
+    }
+};
+
+//Accepted
