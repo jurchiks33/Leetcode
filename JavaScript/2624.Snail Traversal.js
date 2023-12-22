@@ -62,3 +62,10 @@ Array.prototype.snail = function(rowsCount, colsCount) {
     if (this.length !== rowsCount * colsCount) {
         return [];
     }
+
+    // Initialize the 2D array
+    const result = Array.from({ length: rowsCount }, () => Array(colsCount).fill(0));
+
+    let index = 0;
+    for (let col = 0; col < colsCount; col++) {
+        if (col % 2 === 0) {
