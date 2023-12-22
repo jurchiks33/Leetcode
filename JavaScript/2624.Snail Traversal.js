@@ -69,3 +69,7 @@ Array.prototype.snail = function(rowsCount, colsCount) {
     let index = 0;
     for (let col = 0; col < colsCount; col++) {
         if (col % 2 === 0) {
+            // Traverse from top to bottom in the current column for even index columns
+            for (let row = 0; row < rowsCount; row++) {
+                result[row][col] = this[index++];
+            }
