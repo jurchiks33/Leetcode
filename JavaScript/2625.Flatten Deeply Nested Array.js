@@ -61,3 +61,38 @@
 //     -1000 <= each number <= 1000
 //     0 <= n <= 1000
 
+/**
+ * @param {Array} arr
+ * @param {number} n
+ * @return {Array}
+ */
+var flat = function(arr, n) {
+    // Check for invalid input
+    if (!Array.isArray(arr) || n < 0) {
+        return [];
+    }
+
+    // Base case: if n is 0, return the array as is.
+    if (n === 0) {
+        return arr.slice();
+    }
+
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            // Flatten the array element if it's an array, to the depth of n - 1.
+            result.push(...flat(arr[i], n - 1));
+        } else {
+            // If it's not an array, just add the element to the result.
+            result.push(arr[i]);
+        }
+    }
+    return result;
+};
+
+// Example usage
+console.log(flat([1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 0));
+console.log(flat([1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 1));
+console.log(flat([[1, 2, 3], [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 2));
+
+//Accepted
