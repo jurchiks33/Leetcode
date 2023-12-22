@@ -73,3 +73,13 @@ Array.prototype.snail = function(rowsCount, colsCount) {
             for (let row = 0; row < rowsCount; row++) {
                 result[row][col] = this[index++];
             }
+        } else {
+            // Traverse from bottom to top in the current column for odd index columns
+            for (let row = rowsCount - 1; row >= 0; row--) {
+                result[row][col] = this[index++];
+            }
+        }
+    }
+
+    return result;
+};
