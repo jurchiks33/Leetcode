@@ -72,3 +72,9 @@
 
 //SOLUTION
 
+/**
+ * @param {Function} fn
+ * @param {number} t milliseconds
+ * @param {Function}
+ */
+
