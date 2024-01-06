@@ -78,3 +78,11 @@
  * @param {Function}
  */
 
+var debounce = function(fn, t) {
+    let timeoutId = null;
+
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn.apply(this, args), t);
+    }
+};
