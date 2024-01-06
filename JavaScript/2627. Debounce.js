@@ -86,3 +86,11 @@ var debounce = function(fn, t) {
         timeoutId = setTimeout(() => fn.apply(this, args), t);
     }
 };
+
+//Example usage
+const log =debounce(console.log, 100);
+log('Hello'); //cancelled
+setTimeout(() => log('Hello'), 50); //cancelled
+setTimeout(() => log('Hello'), 101); //Logged at t=151ms
+
+//PASSED
