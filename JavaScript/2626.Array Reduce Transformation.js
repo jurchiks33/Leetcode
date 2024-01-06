@@ -41,3 +41,20 @@
 // (105) + nums[2] * nums[2] = 114
 // (114) + nums[3] * nums[3] = 130
 // The final answer is 130.
+
+// Example 3:
+
+// Input: 
+// nums = []
+// fn = function sum(accum, curr) { return 0; }
+// init = 25
+// Output: 25
+// Explanation: For empty arrays, the answer is always init.
+
+ 
+
+// Constraints:
+
+//     0 <= nums.length <= 1000
+//     0 <= nums[i] <= 1000
+//     0 <= init <= 1000
