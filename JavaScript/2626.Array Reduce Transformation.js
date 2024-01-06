@@ -58,3 +58,14 @@
 //     0 <= nums.length <= 1000
 //     0 <= nums[i] <= 1000
 //     0 <= init <= 1000
+
+
+//SOLUTION
+
+/**
+ * @param {number[]} nums
+ * @param {function} fn
+ * @param {number} init
+ * @param {number}
+ */
+
