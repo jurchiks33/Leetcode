@@ -69,3 +69,11 @@
  * @param {number}
  */
 
+var reduce = function(num, fn, init) {
+    let val = init;
+    for (let num of nums) {
+        val = fn(val, num);
+    }
+    return val;
+};
+//Accepted
